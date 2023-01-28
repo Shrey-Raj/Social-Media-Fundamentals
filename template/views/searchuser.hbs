@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search user</title>
+</head>
+
+<style>
+    #searchbox{
+        border:2px solid darkgreen;
+        border-radius: 10px;
+        padding: 10px ;
+        width: 50vw;
+        background-color: rgb(212, 247, 163);
+       
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        
+    }
+    input{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    #submit-btn{
+        border: 2px solid darkorange;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 10px;
+        background-color: rgb(235, 217, 184);
+    }
+    h2{
+        background-color:lightgreen ;
+    }
+    #notfound{
+        background: rgb(243, 91, 91);
+        text-align: center;
+    }
+    #allposts{
+        text-align: center;
+        background: rgb(69, 144, 230);
+    }
+</style>
+<body>
+    {{>header1}}
+
+<form action="/searchuser" method="post">
+<input type="text" name="username" id="searchbox" placeholder="Enter the name of user to search">
+<input type="submit"  id="submit-btn">
+</form>
+
+    <h2>{{username}}</h2>
+    <h2 id="notfound">{{notfound}}</h2>
+
+    <div id="myDiv">
+    <h2 id="allposts">{{posts_of_user}}</h2>
+  {{#each postData}}
+    <div>
+      <h2>TITLE : {{title}}</h2>
+      <p>CONTENT : {{content}}</p>
+      <p>POSTED ON :{{date}}</p>
+      <hr>
+    </div>
+  {{/each}}
+</div>
+</body>
+</html>

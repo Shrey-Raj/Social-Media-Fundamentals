@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    
+label, input, button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+label {
+  margin-bottom: 4px;
+}
+
+label:nth-of-type(2) {
+  margin-top: 12px;
+}
+
+input::placeholder {
+  color: gray;
+}
+
+input {
+  background: #ecf0f3;
+  padding: 10px;
+  padding-left: 20px;
+  height: 50px;
+  font-size: 19px;
+  border-radius: 50px;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+  margin-bottom: 5%;
+}
+
+button  {
+  color: white;
+  margin-top: 20px;
+  background: #1DA1F2;
+  height: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 900;
+  box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+  transition: 0.5s;
+}
+
+button:hover {
+  box-shadow: none;
+}
+
+
+h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#submitbtn>a{
+color: black;
+border: 2px solid rgb(165, 27, 27);
+
+}
+a{
+    text-decoration: none;
+    font-size: 19px;
+}
+</style>
+
+<body>
+    <form action="/createposts" method="post">
+    
+     <label>TITLE*</label>
+        <input type="text" name="title" id="title" placeholder="Enter Title Of Post">
+
+        <label>CONTENT*</label>
+         <input type="text" name="content" id="content" placeholder="Enter Content of Post">
+
+        <label>AUTHOR NAME*(EXACT USERNAME)</label>
+        <input type="text" name="author" id="author" placeholder="Enter Author of Post"> 
+
+        <button type="submit">CREATE POST</button>
+    
+    </form>
+
+
+<script>
+
+    //To make sure that all the fields are filled
+  document.querySelector("form").addEventListener("submit", function (event) {
+  let emptyFields = false;
+  let inputFields = document.querySelectorAll("input");
+  inputFields.forEach(function (input) {
+    if (input.value === "") {
+      emptyFields = true;
+    }
+  });
+  if (emptyFields) {
+    event.preventDefault();
+    throw new Error("All fields are required");
+  }
+});
+</script>
+</body>
+</html>

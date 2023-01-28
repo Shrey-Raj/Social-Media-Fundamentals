@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1{
+        color: darkorange;
+        background: rgb(231, 237, 214);
+    }
+    body{
+        text-align: center;
+    }
+    h2{
+        background-color:lightgreen ;
+    }
+</style>
+<body>
+    {{>header1}}
+    <h1>Welcome to the POSTS GALLERY SECTION</h1>
+    <div class="myDiv"></div>
+
+<div id="myDiv">
+  {{#each postData}}
+    <div>
+      <h2>TITLE : {{title}}</h2>
+      <p>AUTHOR : {{author}}</p>
+      <p>CONTENT : {{content}}</p>
+      <p>POSTED ON :{{date}}</p>
+      <hr>
+    </div>
+  {{/each}}
+</div>
+
+
+</body>
+</html>
