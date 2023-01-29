@@ -37,35 +37,6 @@ app.get("/login", (req, res) => {
 app.get("/createposts", (req, res) => {
   res.render("createposts");
 });
-// app.get('/viewposts' , async(req,res)=>{
-   
-//   try { 
-//     const users = await AllUser.find().exec();
-
-//     let div = document.getElementById("myDiv");
-//     let p = document.createElement("p");
-//     p.innerHTML = "Hello, World!";
-//     div.appendChild(p);
-    
-
-//     users.forEach(user => {
-//       user.posts.forEach(post => {
-//         console.log("Author: ", user.name);
-//         console.log("Title: ", post.title);
-//         console.log("Content: ", post.content);
-//         console.log("Date: ", post.createdAt);
-//         console.log("-------------------");
-//       });
-//     });
-
-//     res.render("viewposts");
-
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).send("An error occurred while retrieving the users.");
-//   } 
-//   // res.render('viewposts') ; 
-// });
 
 app.get('/viewposts' , async(req,res)=>{
   try { 
